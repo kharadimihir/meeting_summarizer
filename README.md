@@ -1,129 +1,106 @@
-📝 Meeting Summarizer
+# 📝 Meeting Summarizer
 
-AI-powered meeting transcript summarizer and sharer built with Next.js, ShadCN UI, Google Gemini API, Nodemailer, and Zustand.
+AI-powered **Meeting Transcript Summarizer** built with **Next.js (App Router)**, **ShadCN UI**, **Google Gemini API**, **Nodemailer**, and **Zustand**.
 
-🔗 Live Demo → Meeting Summarizer
+🔗 **Live Demo** → [Meeting Summarizer](https://meeting-summarizer-blue.vercel.app/)
 
-🚀 Features
+---
 
-Upload Transcript: Upload .txt files containing meeting transcripts.
+## ✨ Features
 
-Custom Prompt: Guide AI summarization with your own prompt.
+- 📂 **Upload Transcript** – Import `.txt` files containing meeting notes.  
+- 🧑‍💻 **Custom Prompt** – Guide AI summarization with your own instructions.  
+- 🤖 **AI-Powered** – Uses **Google Gemini API** to generate structured summaries.  
+- 📝 **Editable Output** – Modify summaries before sending.  
+- 📧 **Email Integration** – Send summaries directly via **Nodemailer** (Gmail).  
+- ⚡ **Persistent State** – Managed using **Zustand** + `localStorage`.  
+- 🎨 **Modern UI** – Responsive interface with **ShadCN UI** & **Tailwind CSS**.  
 
-AI-Powered Summarization: Uses Google Gemini API to generate concise summaries.
+---
 
-Editable Summary: Review and modify the AI-generated summary.
+## 🛠 Tech Stack
 
-Email Integration: Send summaries directly to recipients using Nodemailer.
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)  
+- **UI**: [ShadCN UI](https://ui.shadcn.com/), [Tailwind CSS](https://tailwindcss.com/)  
+- **State Management**: [Zustand](https://github.com/pmndrs/zustand)  
+- **AI Model**: [Google Gemini API](https://ai.google.dev/)  
+- **Email Service**: [Nodemailer](https://nodemailer.com/) (Gmail App Password)  
+- **Deployment**: [Vercel](https://vercel.com/)  
 
-State Management: Managed via Zustand + persistent localStorage.
+---
 
-UI/UX: Modern interface built with ShadCN UI and Tailwind CSS.
+---
 
-🛠️ Tech Stack
+## ⚙️ Installation & Setup
 
-Framework: Next.js (App Router)
-
-UI: ShadCN UI, Tailwind CSS
-
-State Management: Zustand
-
-AI: Google Gemini API
-
-Email Service: Nodemailer with Gmail App Password
-
-Deployment: Vercel
-
-📂 Project Structure
-AI MEETING SUMMARIZER/
-│── actions/
-│   └── summary.js              # Handles AI summarization logic (Gemini API)
-│
-│── app/
-│   ├── api/
-│   │   └── send-email/
-│   │       └── route.js        # Nodemailer email sending API route
-│   ├── layout.js               # Global layout
-│   ├── page.js                 # Landing page
-│   └── page.jsx                # Alternate entry (UI logic)
-│
-│── components/                 # Reusable UI components
-│
-│── lib/
-│   ├── store.js                # Zustand store (state management)
-│   └── utils.js                # Helper functions
-│
-│── public/                     # Static assets (favicon, etc.)
-│
-│── .env                        # Environment variables (local only, not committed)
-│── .gitignore
-│── components.json             # ShadCN UI config
-│── package.json
-│── README.md                   # Documentation
-
-⚙️ Setup & Installation
-1. Clone Repository
+### 1️⃣ Clone the Repository
+```bash
 git clone https://github.com/your-username/meeting-summarizer.git
 cd meeting-summarizer
-
-2. Install Dependencies
+2️⃣ Install Dependencies
 npm install
 
-3. Configure Environment Variables
+3️⃣ Configure Environment Variables
 
 Create a .env.local file in the root:
 
-# Gemini API
+# Google Gemini API Key
 GEMINI_API_KEY=your_gemini_api_key
 
-# Gmail Credentials for Nodemailer
+# Gmail (Nodemailer)
 EMAIL_USER=yourgmail@gmail.com
-EMAIL_PASS=your_gmail_app_password
+EMAIL_PASS=your_app_password
 
 
-⚠️ EMAIL_PASS is not your normal Gmail password. It must be a Gmail App Password (generated after enabling 2FA).
+⚠️ EMAIL_PASS is a Gmail App Password, not your normal password.
+Enable 2FA in Gmail → Generate an App Password → Use it here.
 
-4. Run Locally
+4️⃣ Run the Development Server
 npm run dev
 
 
-App will run at → http://localhost:3000
+Visit → http://localhost:3000
 
-5. Build for Production
+5️⃣ Build for Production
 npm run build
 npm start
 
 📧 Email Sending with Nodemailer
 
-Enable 2FA on Gmail.
+Gmail requires 2FA enabled.
 
-Create an App Password in your Google Account.
+Generate an App Password at:
+Google Account → Security → App Passwords.
 
-Use EMAIL_USER (your Gmail) and EMAIL_PASS (App Password) in .env.local.
+Use that password in .env.local as EMAIL_PASS.
 
 🎯 Usage Flow
 
-Upload a .txt meeting transcript.
+Upload a .txt transcript.
 
-Provide a custom summarization prompt.
+Enter a custom prompt for AI.
 
-Click Generate Summary → AI creates a structured summary.
+Click Generate Summary → Gemini AI creates a structured summary.
 
 Edit the summary if needed.
 
-Enter recipient email → click Send Summary.
+Enter recipient’s email → click Send Summary.
 
-Recipient receives the summary via email.
+Recipient receives the summary via Gmail.
 
-📦 Deployment
+🚀 Deployment (Vercel)
 
-Deployed on Vercel.
-Steps:
+Push project to GitHub.
 
-Push repo to GitHub.
+Import repo into Vercel.
 
-Import project into Vercel.
+Add Environment Variables in Vercel Dashboard:
 
-Add GEMINI_API_KEY, EMAIL_USER, and EMAIL_PASS in Vercel Environment Variables.
+GEMINI_API_KEY
 
-Deploy 🚀.
+EMAIL_USER
+
+EMAIL_PASS
+
+Deploy ✅
+
